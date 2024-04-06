@@ -158,7 +158,6 @@ def login(config):
             upstox_login(driver, config)
         driver.quit()
     except Exception as e:
-        driver.quit()
         print(e)
 
 
