@@ -35,7 +35,7 @@ RUN pip install pyotp
 RUN pip install requests
 
 # Copy the Lambda function code into the container
-COPY lambda_function.py /var/task/lambda_function.py
+COPY . /var/task/.
 
 # Set the working directory
 WORKDIR /var/task
