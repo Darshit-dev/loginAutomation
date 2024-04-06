@@ -10,46 +10,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from telegramBot import send_alert
 # from constant import config as user_config
 from selenium.webdriver.support import expected_conditions as EC
-
+from constant import user_config
 # Specify the path to the chromedriver.exe file
 
-
-user_config = [
-    # {
-    #     'id': 'GC7132',
-    #     'broker_name': 'Upstox',
-    #     'name': 'Jaydeep',
-    #     'url': 'https://www.quantman.in/?locale=en',
-    #     'secret_key': 'VG6EADQM4IWXDHEKFZY3PDKA3AXF4FGR',
-    #     'mobile':'8758614213',
-    #     'pass': '123456'
-    # },
-    {
-        'id':'3YB8J7',
-        'name':'Nikunj',
-        'broker_name':'Upstox',
-        'url':'https://www.quantman.in/?locale=en',
-        'secret_key': 'ITJVXEMVYRTAFATTJJQI34ANJSYWGAPQ',
-        'pass' : '151015',
-        'mobile': '7434002703'
-    },
-    {
-        'id': 'FA187829',
-        'broker_name': 'Finvasia',
-        'name': 'Sanket',
-        'url': 'https://www.quantman.in/?locale=en',
-        'secret_key': 'AI266LYE7R35C75S6MZ33X22ZB7XGB25',
-        'pass': 'DKking@@999'
-    },
-    {
-        'id': 'FA163285',
-        'name': 'Darshit',
-        'broker_name': 'Finvasia',
-        'url': 'https://www.quantman.in/?locale=en',
-        'secret_key': 'J3TB5P6GAH66G76SI2645366B3DC57Y6',
-        'pass': 'DKking@999'
-    }
-]
 def generate_otp(secret_key):
     totp = pyotp.TOTP(secret_key)
     return totp.now()
