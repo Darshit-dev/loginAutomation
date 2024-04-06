@@ -1,8 +1,9 @@
+import time
+import pyotp
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-import time
-import pyotp
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 # from webdriver_manager.chrome import ChromeDriverManager
@@ -70,6 +71,9 @@ def shoonya_login(driver, config):
     caption = config['name'] + ' ' + config['broker_name']
     file = {'photo': open(f"shoonya_{config['name']}.png", 'rb')}
     send_alert(file,caption)
+    time.sleep(2)
+    os.remove(f"shoonya_{config['name']}.png")
+    
     print("shoonya login Ended")
 
 def upstox_login(driver, config):
@@ -111,6 +115,8 @@ def upstox_login(driver, config):
         file = {'photo': open('upstox_login.png', 'rb')}
         caption = config['name'] + ' ' + config['broker_name']
         send_alert(file,caption)
+        time.sleep(2)
+        os.remove("upstox_login.png")
         print("upstox login Ended")
 
     except Exception as e:
@@ -135,7 +141,8 @@ def login(config):
         chrome_driver_path = "/usr/local/bin/chromedriver"
         service = Service(chrome_driver_path)
         driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.maximize_window()
+        # driver.maximize_window()
+        driver.set_window_size(1920, 1080)
         # Example: Scraping a website title
         driver.get('https://www.quantman.in/')
         
