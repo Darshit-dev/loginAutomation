@@ -5,7 +5,7 @@ import time
 import pyotp
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 from telegramBot import send_alert
 # from constant import config as user_config
 from selenium.webdriver.support import expected_conditions as EC
