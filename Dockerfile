@@ -31,6 +31,8 @@ RUN if [ -f /tmp/chromedriver_linux64.zip ]; then \
 
 # Install Selenium
 RUN pip install selenium
+RUN pip install pyotp
+RUN pip install requests
 
 # Copy the Lambda function code into the container
 COPY lambda_function.py /var/task/lambda_function.py
