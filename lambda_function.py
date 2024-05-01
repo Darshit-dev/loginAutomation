@@ -109,7 +109,8 @@ def login(config):
         # Example: Scraping a website title
         driver.get('https://www.quantman.in/')
         
-        driver.find_element(By.CSS_SELECTOR, '#dropdownMenuButton').click()
+        # driver.find_element(By.CSS_SELECTOR, '#dropdownMenuButton').click()  OLD
+        driver.find_element(By.ID, 'brokerDropdownMenuButton').click()
         broker_name = config['broker_name']
         select_broker = driver.find_element(By.XPATH, f'//div[text()="{broker_name}"]')
         select_broker.click()
